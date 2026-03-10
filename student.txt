@@ -1,0 +1,2 @@
+{'name': 'mahi', 'age': 18, 'grade': '12'}
+{'name': 'trishul', 'age': 19, 'grade': '12'}
