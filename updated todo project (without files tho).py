@@ -4,9 +4,17 @@ def load_tasks():
     if os.path.exists('tasks.txt'):
         with open('tasks.txt','r') as file:
             for line in file:
-                task,status=line.strip().split(' | ',1) 
+                task,status=line.strip().rsplit(' | ',1) 
                 f[task]=status
     return f
+
+def load_bin_tasks():
+    bin_tasks=[]
+    if os.path.exists('bin.txt'):
+        with open('bin.txt','r') as file:
+            for line in file:
+                bin_tasks.append(line.strip())
+    return bin_tasks
 
 def file_code(f):
     with open('tasks.txt','w') as file:
@@ -30,7 +38,7 @@ def add_tasks(f):
     print('Enter Tasks:')
     with open('tasks.txt','a') as file:
         while True:
-            b=input()
+            b=input().strip()
             if b=='':
                 print('Task cannot be empty')
                 continue
@@ -69,9 +77,9 @@ def remove_tasks(f,bin_tasks):
     print('Enter the number of the task to remove:\n')
     if len(f)==0:
         print('No tasks to remove')
-        iterate_tasks(f)
     else:
         try:
+            iterate_tasks(f)
             r=int(input())
             if r in range(1, len(f) + 1):
                 keys1=list(f.keys())
