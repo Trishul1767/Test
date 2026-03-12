@@ -24,7 +24,10 @@ def file_code(f):
 def iterate_tasks(f):
     a=1
     for i,j in f.items():
-        print(f'{a}. {i} | {j}')
+        if j=='done':
+            print(f'{a}. {i} | [✓]')
+        else:
+            print(f'{a}. {i} | [ ]')
         a+=1
 
 def view_tasks(f):
@@ -56,43 +59,90 @@ def add_tasks(f):
         iterate_tasks(f)
 
 def update_tasks(f):
+    print('note: type 0 if done')
     if len(f)==0:
         print('No tasks to update')
     else:
         iterate_tasks(f)
         try:
-            r=int(input("enter the number of the task that has been complete: "))
-            if r in range(1, len(f) + 1):
-                keys1=list(f.keys())
-                f[keys1[r-1]]='done'
-                print('Update Complete')
-                iterate_tasks(f)
-                file_code(f)
-            else:
-                print('Invalid task number')
+            while True:
+                r=int(input())
+                if r==0:
+                    break
+                elif 'peding' not in f.values():
+                    break
+                elif r in range(1, len(f) + 1):
+                    keys1=list(f.keys())
+                    f[keys1[r-1]]='done'
+                    print('Update Complete')
+                    iterate_tasks(f)
+                    file_code(f)
+                else:
+                    print('Invalid task number')
         except ValueError:
             print('Please Enter Valid Number')
 
+def view_done_tasks(f):
+    print('Done tasks: ')
+    a=1
+    if 'done' not in f.values():
+        print('No tasks done yet!')
+    else:
+        for i,j in f.items():
+            if j=='done':
+                print(f'{a}. {i}')
+                a+=1
+
+def view_pending_tasks(f):
+    print('Pending tasks: ')
+    a=1
+    if 'pending' not in f.values():
+        print('No pending tasks!')  
+    else:
+        for i,j in f.items():
+            if j=='pending':
+                print(f'{a}. {i}')
+                a+=1
+    
+def search_tasks(f):
+    s=input('Enter the task to search: ').strip()
+    flag=False
+    for i,j in f.items():
+        if s.lower() in i.lower():
+            print(f'{i} | {j}')
+            flag=True
+    if not flag:
+        print('Task not found')
+
 def remove_tasks(f,bin_tasks):
     print('Enter the number of the task to remove:\n')
+    iterate_tasks(f)
+    print("Note: type '0' if done")
     if len(f)==0:
         print('No tasks to remove')
     else:
         try:
+            while True:
+                r=int(input())
+                if r==0:
+                    break
+                elif len(f)==0:
+                    break
+                elif r in range(1, len(f) + 1):
+                    keys1=list(f.keys())
+                    bin_tasks.append(keys1[r-1])
+                    with open('bin.txt','a') as file:
+                        file.write(f'{keys1[r-1]}\n')
+                    print(f'{keys1[r-1]} is removed')
+                    f.pop(keys1[r-1])
+                    print('Tasks:')
+                    iterate_tasks(f)
+                    file_code(f)
+                else:
+                    print('Invalid task number')
+            print('Tasks:')
             iterate_tasks(f)
-            r=int(input())
-            if r in range(1, len(f) + 1):
-                keys1=list(f.keys())
-                bin_tasks.append(keys1[r-1])
-                with open('bin.txt','a') as file:
-                    file.write(f'{keys1[r-1]}\n')
-                print(f'{keys1[r-1]} is removed')
-                f.pop(keys1[r-1])            
-                print('Tasks:')
-                iterate_tasks(f)
-                file_code(f)
-            else:
-                print('Invalid task number')
+            file_code(f)
         except ValueError:
             print('Please Enter Valid Number')
     
@@ -116,10 +166,13 @@ print("  ********** Welcome to TO-DO list **********")
 print('type 1 to view tasks')
 print("type 2 to add tasks")
 print('type 3 to update tasks')
-print('type 4 to remove tasks')
-print('type 5 to see removed tasks')
-print('type 6 to empty bin')
-print('type 7 to exit To-Do app!')
+print('type 4 to see done tasks')
+print('type 5 to see pending tasks')
+print('type 6 to search tasks')
+print('type 7 to remove tasks')
+print('type 8 to see removed tasks')
+print('type 9 to empty bin')
+print('type 10 to exit To-Do app!')
 while True:
     try:
         n=int(input('enter a choice: '))
@@ -130,12 +183,18 @@ while True:
         elif n==3:
             update_tasks(f)
         elif n==4:
-            remove_tasks(f,bin_tasks)
+            view_done_tasks(f)
         elif n==5:
-            removed_tasks(bin_tasks)
+            view_pending_tasks(f)
         elif n==6:
-            empty_bin(bin_tasks)
+            search_tasks(f)
         elif n==7:
+            remove_tasks(f,bin_tasks)
+        elif n==8:
+            removed_tasks(bin_tasks)
+        elif n==9:
+            empty_bin(bin_tasks)
+        elif n==10:
             print('Thanks for using the app!')
             break
         else:

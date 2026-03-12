@@ -1,4 +1,2 @@
-okay | done
-add | pending
-add1 | pending
-add2 | pending
+read | done
+play | done
