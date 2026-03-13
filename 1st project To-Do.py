@@ -36,6 +36,11 @@ def view_tasks(f):
     else:
         iterate_tasks(f)
 
+def view_bin_tasks(bin_tasks):
+    print('Bin:')
+    for i,j in enumerate(bin_tasks):
+        print(f'{i+1}. {j}')
+
 def add_tasks(f):
     print('Note: type done to exit')
     print('Enter Tasks:')
@@ -145,6 +150,31 @@ def remove_tasks(f,bin_tasks):
             file_code(f)
         except ValueError:
             print('Please Enter Valid Number')
+
+def recover_bin(bin_tasks,f):
+    if len(bin_tasks)==0:
+        print('Empty Bin')    
+        print('note: type 0 if done')
+        view_bin_tasks(bin_tasks)
+        print('enter the number of the task to recover:\n')
+        try:
+            while True:
+                r=int(input())
+                if r==0:
+                    break
+                elif len(bin_tasks)==0:
+                    break
+                elif r in range(1, len(bin_tasks) + 1):
+                    f[bin_tasks[r-1]]='pending'
+                    print(f'{bin_tasks[r-1]} has been recovered')
+                    bin_tasks.pop(r-1)
+                    view_bin_tasks(bin_tasks)
+                    file_code(f)
+                else:
+                    print('Invalid task number')
+        except ValueError:
+            print('Please Enter Valid Number')
+                
     
 def removed_tasks(bin_tasks):
     if len(bin_tasks)==0:
@@ -170,9 +200,10 @@ print('type 4 to see done tasks')
 print('type 5 to see pending tasks')
 print('type 6 to search tasks')
 print('type 7 to remove tasks')
-print('type 8 to see removed tasks')
-print('type 9 to empty bin')
-print('type 10 to exit To-Do app!')
+print('type 8 to recover tasks from bin')
+print('type 9 to see removed tasks')
+print('type 10 to empty bin')
+print('type 11 to exit To-Do app!')
 while True:
     try:
         n=int(input('enter a choice: '))
@@ -191,10 +222,12 @@ while True:
         elif n==7:
             remove_tasks(f,bin_tasks)
         elif n==8:
-            removed_tasks(bin_tasks)
+            recover_bin(bin_tasks,f)
         elif n==9:
-            empty_bin(bin_tasks)
+            removed_tasks(bin_tasks)
         elif n==10:
+            empty_bin(bin_tasks)
+        elif n==11:
             print('Thanks for using the app!')
             break
         else:

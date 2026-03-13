@@ -1,2 +1,4 @@
 read | done
-play | done
+Add | pending
+sleep | pending
+play | pending
