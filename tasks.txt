@@ -1,4 +1,8 @@
+study | pending
 read | done
+practice | pending
+sports | done
+revise | done
 Add | pending
 sleep | pending
 play | pending

@@ -74,7 +74,7 @@ def update_tasks(f):
                 r=int(input())
                 if r==0:
                     break
-                elif 'peding' not in f.values():
+                elif 'pending' not in f.values():
                     break
                 elif r in range(1, len(f) + 1):
                     keys1=list(f.keys())
@@ -119,6 +119,17 @@ def search_tasks(f):
     if not flag:
         print('Task not found')
 
+def sorted_tasks(f):
+    if len(f)==0:
+        print('No tasks to sort')
+    else:
+        sorted_f=sorted(f.items())
+        for i,j in sorted_f:
+            if j=='done':
+                print(f'{i} | [✓]')
+            else:
+                print(f'{i} | [ ]')
+
 def remove_tasks(f,bin_tasks):
     print('Enter the number of the task to remove:\n')
     iterate_tasks(f)
@@ -153,7 +164,8 @@ def remove_tasks(f,bin_tasks):
 
 def recover_bin(bin_tasks,f):
     if len(bin_tasks)==0:
-        print('Empty Bin')    
+        print('Empty Bin')
+    else:    
         print('note: type 0 if done')
         view_bin_tasks(bin_tasks)
         print('enter the number of the task to recover:\n')
@@ -170,6 +182,9 @@ def recover_bin(bin_tasks,f):
                     bin_tasks.pop(r-1)
                     view_bin_tasks(bin_tasks)
                     file_code(f)
+                    with open('bin.txt','w') as file:
+                        for i in bin_tasks:
+                            file.write(f'{i}\n')
                 else:
                     print('Invalid task number')
         except ValueError:
@@ -195,15 +210,16 @@ f=load_tasks()
 print("  ********** Welcome to TO-DO list **********")
 print('type 1 to view tasks')
 print("type 2 to add tasks")
-print('type 3 to update tasks')
+print('type 3 to update tasks') 
 print('type 4 to see done tasks')
 print('type 5 to see pending tasks')
 print('type 6 to search tasks')
-print('type 7 to remove tasks')
-print('type 8 to recover tasks from bin')
-print('type 9 to see removed tasks')
-print('type 10 to empty bin')
-print('type 11 to exit To-Do app!')
+print('type 7 to sort tasks in alphabetical order')
+print('type 8 to remove tasks')
+print('type 9 to recover tasks from bin')
+print('type 10 to see removed tasks')
+print('type 11 to empty bin')
+print('type 12 to exit To-Do app!')
 while True:
     try:
         n=int(input('enter a choice: '))
@@ -220,14 +236,16 @@ while True:
         elif n==6:
             search_tasks(f)
         elif n==7:
-            remove_tasks(f,bin_tasks)
+            sorted_tasks(f)
         elif n==8:
-            recover_bin(bin_tasks,f)
+            remove_tasks(f,bin_tasks)
         elif n==9:
-            removed_tasks(bin_tasks)
+            recover_bin(bin_tasks,f)
         elif n==10:
-            empty_bin(bin_tasks)
+            removed_tasks(bin_tasks)
         elif n==11:
+            empty_bin(bin_tasks)
+        elif n==12:
             print('Thanks for using the app!')
             break
         else:
