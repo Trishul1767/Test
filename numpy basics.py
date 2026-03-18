@@ -1,8 +1,8 @@
 import numpy as np
-'''a=np.array([1,2,3,4,5])
-print(a)
+a=np.array([1,2,3,4,5])
+print(np.shape(a))
 b=np.array([[1,2,3],[4,5,6]])
-print(b)
+print(np.shape(b))
 c=np.ones((3,4))
 print(c)
 d=np.zeros((2,3))
@@ -12,8 +12,12 @@ print(e)
 a=np.linspace(0,100,5)
 print(a)
 b=np.arange(0,10)
-print(b)'''
+print(b)
 a=np.random.rand(3,4)*100
 print(a)
 b=np.random.randint(50,100,(3,4))
 print(b)
+#creating a 3D array
+a=np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
+print(a)
+print(np.shape(a))
