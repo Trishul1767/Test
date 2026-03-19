@@ -1,5 +1,5 @@
 #creating a list of dictionaries to store information of different students by taking 
-'''student_list=[]
+student_list=[]
 n=int(input("Enter the number of students: "))
 for i in range(n):
     student={}
@@ -10,14 +10,8 @@ for i in range(n):
     student_list.append(student)
 print(student_list)
 
-2. Write a function called add_student(student_list).
+#2.
 
-The function should:
-a) Ask the user to enter student name.
-b) Ask the user to enter roll number.
-c) Ask the user to enter marks.
-d) Store the entered details in a dictionary.
-e) Append the dictionary to the student_list.'''
 student_list=[]
 def add_student(student_list):
     student={}
@@ -25,6 +19,19 @@ def add_student(student_list):
     student['roll']=int(input("Enter the roll number of the student: "))
     student['marks']=float(input("Enter the marks of the student: "))
     student_list.append(student)
-print(add_student(student_list))
 print(student_list)
+
+#3.
+'''3. Write a function called display_students(student_list).
+
+The function should:
+a) Traverse through the list of dictionaries
+b) Display each student record'''
+
+student_list={}
+def display_students(student_list):
+    for student in student_list:
+        print(student)
+
+display_students(student_list)
 
