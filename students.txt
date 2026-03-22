@@ -1,2 +1,2 @@
-{'name': 'trishul', 'roll': 2, 'marks': 10.0, 'semister': '2'}
-{'name': 'sai', 'roll': 1, 'marks': 10.0, 'semister': '2'}
+{'name': 'sai', 'roll_no': 1, 'marks': 10.0, 'semester': '2'}
+{'name': 'ram', 'roll_no': 2, 'marks': 10.0, 'semester': '2'}
