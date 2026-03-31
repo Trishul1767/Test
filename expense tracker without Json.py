@@ -20,7 +20,7 @@ def view_expenses():
     else:
         with open("expenses.txt", "r") as f:
             for line in f:
-                print(f'{line.strip()}')
+                print(line.strip())
 def view_total_expenses():
     total = 0
     if not os.path.exists("expenses.txt"):

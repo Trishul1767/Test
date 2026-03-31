@@ -36,7 +36,7 @@ class Car:
     def __repr__(self):
         return f'Car(model = {self.model}, horsepower = {self.horsepower})'
     def fuel_up(self,x:float):
-        self.fuel_gauge=x
+        self.fuel_gauge+=x
         print(f'{self.model} fuel gauge is now full.')
 
 x=Car('Nexon',118)
@@ -44,12 +44,12 @@ y=Car('Harrier',140)
 z=Car('m340i',250)
 print(repr(x))
 z.turn_on()
-z.run_lap(3)
-#z.fuel_up()
 z.run_lap(10)
-z.run_lap(7)
-z.fuel_up(500)
-z.run_lap(1)
 z.turn_off()
+z.turn_on()
+z.run_lap(1)
+z.fuel_up(50)
+z.run_lap(1)
+
 
 
