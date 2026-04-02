@@ -6,6 +6,8 @@ data={
 }
 df=pd.DataFrame(data)
 df1=df.iloc[0]
-#print(df)
+print(df)
 print(df1)
-#print(df[df['marks']>80])
+print(df[df['marks']>80])
+print(df[df['age']>18])
+print(df[df['name']=='Sai'])
