@@ -36,11 +36,19 @@ def view_total_expenses():
                     continue
     print(f"Total Expenses: {total}")
 
+def delete_expenses():
+    if os.path.exists("expenses.txt"):
+        os.remove("expenses.txt")
+        print("All expenses deleted successfully.")
+    else:
+        print("No expenses to delete.")
+
 while True:
     print("\n1. Add Expense")
     print("2. View Expenses")
     print("3. View Total Expenses")
-    print("4. Exit")
+    print('4. Delete Expenses')
+    print("5. Exit")
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -50,6 +58,8 @@ while True:
     elif choice == "3":
         view_total_expenses()
     elif choice == "4":
+        delete_expenses()
+    elif choice == "5":
         break
     else:
         print("Invalid choice. Please try again.")
