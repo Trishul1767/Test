@@ -1,4 +1,3 @@
-# expense tracker without Json but with file handling
 import datetime
 import os
 
