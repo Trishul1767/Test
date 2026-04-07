@@ -1,4 +1,3 @@
-# expense tracker without Json but with file handling
 import datetime
 import os
 
@@ -21,6 +20,7 @@ def view_expenses():
         with open("expenses.txt", "r") as f:
             for line in f:
                 print(line.strip())
+
 def view_total_expenses():
     total = 0
     if not os.path.exists("expenses.txt"):
@@ -40,19 +40,14 @@ def sort_expenses_by_date():
     if not os.path.exists("expenses.txt"):
         print("No expenses recorded yet.")
         return
-
-    # Ask the user for the date in YYYY-MM-DD format
     search_date = input("Enter the date to filter (YYYY-MM-DD): ")
     found = False
-    
+
     print(f"\n--- Expenses for {search_date} ---")
     with open("expenses.txt", "r") as f:
         for line in f:
-            # line.split("|") creates a list: [category, amount, date]
             parts = line.split("|")
             if len(parts) == 3:
-                # parts[2] is the date string " 2023-10-27 10:30:00"
-                # .strip() removes spaces, and we check if it starts with the search_date
                 file_date = parts[2].strip()
                 if file_date.startswith(search_date):
                     print(line.strip())
@@ -60,8 +55,6 @@ def sort_expenses_by_date():
     
     if not found:
         print("No expenses found for this date.")
-        
-
 
 def delete_expenses():
     if os.path.exists("expenses.txt"):
@@ -78,7 +71,6 @@ while True:
     print('5. Delete Expenses')
     print("6. Exit")
     choice = input("Enter your choice: ")
-
     if choice == "1":
         add_expense()
     elif choice == "2":
