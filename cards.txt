@@ -1,0 +1,2 @@
+Python|recursion|A funtion calling itself UNTILL the base case NOTE: if base is not mentioned then it will run again and again.
+math|trace|sum of diagonal elements is trace of the matrix
