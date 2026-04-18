@@ -1,5 +1,4 @@
-#creating a list of dictionaries to store information of different students by taking 
-'''student_list=[]
+student_list=[]
 n=int(input("Enter the number of students: "))
 for i in range(n):
     student={}
@@ -10,7 +9,6 @@ for i in range(n):
     student_list.append(student)
 print(student_list)
 
-#2.
 
 student_list=[]
 def add_student(student_list):
@@ -21,23 +19,12 @@ def add_student(student_list):
     student_list.append(student)
 print(student_list)
 
-#3.
-3. Write a function called display_students(student_list).
-
-The function should:
-a) Traverse through the list of dictionaries
-b) Display each student record
-
 student_list={}
 def display_students(student_list):
     for student in student_list:
         print(student)
 
 display_students(student_list)
-
-4. Write a function called save_to_file(student_list). 
-The function should:
-a) Store all student records into a file named students.txt.
 
 def save_to_file(student_list):
     with open('students.txt','w') as f:
@@ -57,12 +44,6 @@ print(student_list)
 with open('students.txt','r') as f:
     print(f.read())
 
-5. Write a function called read_from_file().
-
-The function should:
-a) Read the contents of students.txt
-b) Display all student records stored in the file.
-
 def read_from_file():
     with open('students.txt','r') as f:
         for line in f:
@@ -70,26 +51,21 @@ def read_from_file():
             print(student)
 read_from_file()
 
-6.Write a function called find_topper(student_list).
-
-The function should:
-a)Identify the student with the highest marks
-b)Display the topper information.'''
 
 def find_topper(student_list):
     if not student_list:
         print("No students in the list.")
         return
-    max=student_list[0]['marks']
+    max1=student_list[0]
     for student in student_list:
-        if student['marks']>max:
-            max=student['marks']
+        if student['marks']>max1['marks']:
+            max1=student
                     
     print("Topper Information:")
-    print(f"Name: {max['name']}")
-    print(f"Roll Number: {max['roll']}")
-    print(f"Marks: {max['marks']}")
-    print(f"Semester: {max['semister']}")
+    print(f"Name: {max1['name']}")
+    print(f"Roll Number: {max1['roll']}")
+    print(f"Marks: {max1['marks']}")
+    print(f"Semester: {max1['semister']}")
 student_list=[]
 n=int(input("Enter the number of students: "))
 for i in range(n):
@@ -100,16 +76,6 @@ for i in range(n):
     student['semister']=input("Enter the semester of the student: ")
     student_list.append(student)
 find_topper(student_list)
-'''
-7. Write a menu-driven Python program that repeatedly displays the following options:
-
-a) Add Student
-b) Display Students
-c) Save to File
-d) Read from File
-e)Find Topper
-f) Exit
-The program should continue executing until the user selects Exit.
 
 def display_students(student_list):
     for student in student_list:
@@ -168,5 +134,5 @@ while True:
         print("Exiting the program.")
         break
     else:
-        print("Invalid choice. Please try again.")'''
+        print("Invalid choice. Please try again.")
 

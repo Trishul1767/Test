@@ -44,6 +44,6 @@ while True:
         with open('student.txt','r') as f:
             for line in f:
                 student=eval(line)
-                print(student)
+                print(student)            
     elif n==4:
         exit()

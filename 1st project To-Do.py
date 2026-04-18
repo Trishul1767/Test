@@ -123,12 +123,14 @@ def sorted_tasks(f):
     if len(f)==0:
         print('No tasks to sort')
     else:
+        a=1
         sorted_f=sorted(f.items())
         for i,j in sorted_f:
             if j=='done':
-                print(f'{i} | [✓]')
+                print(f'{a}. {i} | [✓]')
             else:
-                print(f'{i} | [ ]')
+                print(f'{a}. {i} | [ ]')
+            a+=1
 
 def remove_tasks(f,bin_tasks):
     print('Enter the number of the task to remove:\n')
@@ -205,50 +207,54 @@ def empty_bin(bin_tasks):
         file.write('')
     print("Bin Emptied.")
 
-bin_tasks=load_bin_tasks()
-f=load_tasks()
-print("  ********** Welcome to TO-DO list **********")
-print('type 1 to view tasks')
-print("type 2 to add tasks")
-print('type 3 to update tasks') 
-print('type 4 to see done tasks')
-print('type 5 to see pending tasks')
-print('type 6 to search tasks')
-print('type 7 to sort tasks in alphabetical order')
-print('type 8 to remove tasks')
-print('type 9 to recover tasks from bin')
-print('type 10 to see removed tasks')
-print('type 11 to empty bin')
-print('type 12 to exit To-Do app!')
-while True:
-    try:
-        n=int(input('enter a choice: '))
-        if n==1:
-            view_tasks(f)
-        elif n==2:
-            add_tasks(f)
-        elif n==3:
-            update_tasks(f)
-        elif n==4:
-            view_done_tasks(f)
-        elif n==5:
-            view_pending_tasks(f)
-        elif n==6:
-            search_tasks(f)
-        elif n==7:
-            sorted_tasks(f)
-        elif n==8:
-            remove_tasks(f,bin_tasks)
-        elif n==9:
-            recover_bin(bin_tasks,f)
-        elif n==10:
-            removed_tasks(bin_tasks)
-        elif n==11:
-            empty_bin(bin_tasks)
-        elif n==12:
-            print('Thanks for using the app!')
-            break
-        else:
-            print('invalid choice!')
-    except ValueError:
-        print('Please Enter Valid Number')
+def main():
+    bin_tasks=load_bin_tasks()
+    f=load_tasks()
+    print("  ********** Welcome to TO-DO list **********")
+    print('type 1 to view tasks')
+    print("type 2 to add tasks")
+    print('type 3 to update tasks') 
+    print('type 4 to see done tasks')
+    print('type 5 to see pending tasks')
+    print('type 6 to search tasks')
+    print('type 7 to sort tasks in alphabetical order')
+    print('type 8 to remove tasks')
+    print('type 9 to recover tasks from bin')
+    print('type 10 to see removed tasks')
+    print('type 11 to empty bin')
+    print('type 12 to exit To-Do app!')
+    while True:
+        try:
+            n=int(input('enter a choice: '))
+            if n==1:
+                view_tasks(f)
+            elif n==2:
+                add_tasks(f)
+            elif n==3:
+                update_tasks(f)
+            elif n==4:
+                view_done_tasks(f)
+            elif n==5:
+                view_pending_tasks(f)
+            elif n==6:
+                search_tasks(f)
+            elif n==7:
+                sorted_tasks(f)
+            elif n==8:
+                remove_tasks(f,bin_tasks)
+            elif n==9:
+                recover_bin(bin_tasks,f)
+            elif n==10:
+                removed_tasks(bin_tasks)
+            elif n==11:
+                empty_bin(bin_tasks)
+            elif n==12:
+                print('Thanks for using the app!')
+                break
+            else:
+                print('invalid choice!')
+        except ValueError:
+            print('Please Enter Valid Number')
+            
+if __name__ == "__main__":
+    main()
