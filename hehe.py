@@ -13,7 +13,7 @@ def harshad_number(n):
     add=0
     while n!=0:
         remain=n%10
-        add=add+remain  
+        add+=remain  
         n=n//10
     if x%add==0:    
         print("The number is a Harshad number")   
@@ -24,7 +24,7 @@ def sum_digits(n):
     sum=0
     while n>0:
         remain=n%10
-        sum=sum+remain
+        sum+=remain
         n=n//10
     print("The sum of digits is",sum)
 
@@ -39,7 +39,7 @@ def neon(n):
     sum=0
     while sq>0:
         remain=sq%10
-        sum=sum+remain
+        sum+=remain
         sq=sq//10
     if sum==n:
         print("The number is a Neon number")
