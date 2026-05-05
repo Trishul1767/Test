@@ -1,10 +1,3 @@
-# This is a simple comment
-print("Hello, World!")
-# Another comment
-def greet(name):
-    return f"Hello, {name}!"
-print(greet("Alice"))
-# End of the script
 # two sum problem
 def two_sum(nums, target):
     num_dict = {}

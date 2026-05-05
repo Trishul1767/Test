@@ -15,7 +15,7 @@ print(T[::2])  # slice with a step of 2 (every other element
 print(T[::-1])  # reverse the tuple
 
 print(T)  # original tuple remains unchanged
-print(t[::-2])
+print(T[::-2])
 print(T[1:4:2])  # slice from index 1 to 3 with a step of 2
 print(T[::3])  # slice with a step of 3 (every third element)
         
