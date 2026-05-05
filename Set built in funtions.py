@@ -16,4 +16,7 @@ print(A.union(B))
 print(A.intersection(B))
 print(A.difference(B))
 print(A.symmetric_difference(B))
+print(A.issubset(B))
+print(A.issuperset(B))
+print(A.isdisjoint(B))
 
