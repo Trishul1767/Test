@@ -4,6 +4,7 @@ class Car:
         self.horsepower=horsepower
         self.turn_on_engine:bool=False
         self.fuel_gauge:float=100.0
+        self.laps_R:int=8
     
     def turn_on(self):
         if self.turn_on_engine:
@@ -21,12 +22,15 @@ class Car:
 
     def run_lap(self,lap:int):
         if self.turn_on_engine:
-            if self.fuel_gauge>=lap*5:
-                print(f'{self.model} completes {lap} lap(s) with {self.horsepower} horsepower')
-                self.fuel_gauge-=lap*5
-                print(f'{self.model} fuel gauge: {self.fuel_gauge}%')
+            if self.laps_R>=lap:
+                if self.fuel_gauge>=lap*5:
+                    self.fuel_gauge-=lap*5
+                    self.laps_R-=lap
+                    print(f'{self.model} completes {lap} lap(s). Fuel gauge: {self.fuel_gauge}%')
+                else:
+                    print(f'{self.model} does not have enough fuel to complete {lap} lap(s).')
             else:
-                print(f'{self.model} does not have enough fuel to complete {lap} lap(s).')
+                print(f"There are only {self.laps_R} laps remaining")
         else:
             print(f'{self.model} engine is off. Please turn it on to run laps.')
 
@@ -43,14 +47,13 @@ class Car:
     def check_fuel(self):
         print(f'{self.model} fuel gauge: {self.fuel_gauge}%')
 
-x=Car('Nexon',118)
-y=Car('Harrier',140)
+    def laps_remaining(self):
+        print(f"Number of laps remained are {self.laps_R}")
+
 z=Car('m340i',250)
-print(repr(x))
 z.turn_on()
 z.run_lap(10)
-z.turn_off()
-z.turn_on()
+z.laps_remaining()
 z.run_lap(1)
 z.fuel_up(50)
 z.run_lap(1)
