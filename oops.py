@@ -12,6 +12,7 @@ class Dog:
         self.name=name
         self.age=age
         self.awake:bool=False
+        self.waking:bool=False
     def bark(self):
         print(f'{self.name} says Woof!')
     def wake_up(self):
@@ -26,5 +27,11 @@ class Dog:
             print("Dog is now asleep.")
         else:
             print("Dog is already asleep.")
+    def walk(self):
+        if self.walking:
+            print("Dog already had a walk today.")
+        else:
+            self.walking= True
+            print("Dog has now went for a walk.")
 d1=Dog('Buddy',3)
 d1.bark()
