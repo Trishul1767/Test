@@ -2,8 +2,15 @@ class Person:
     def __init__(self,name:str,age:int):
         self.name=name
         self.age=age
+        self.awake:bool=False
     def greet(self):
         return f'Hello, my name is {self.name}'
+    def eat(self):
+        if self.awake:
+            print(f"{self.name} is awake.")
+        else:
+            self.awake=True
+            print(f"{self.name} just woke up.")
 p = Person('John',36)
 print(p.greet())
 
