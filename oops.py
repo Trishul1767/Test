@@ -5,7 +5,7 @@ class Person:
         self.awake:bool=False
     def greet(self):
         return f'Hello, my name is {self.name}'
-    def eat(self):
+    def wake_up(self):
         if self.awake:
             print(f"{self.name} is awake.")
         else:
