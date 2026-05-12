@@ -3,6 +3,7 @@ class Person:
         self.name=name
         self.age=age
         self.awake:bool=False
+        self.snack:bool=False
     def greet(self):
         return f'Hello, my name is {self.name}'
     def wake_up(self):
@@ -11,6 +12,12 @@ class Person:
         else:
             self.awake=True
             print(f"{self.name} just woke up.")
+    def snacks(self):
+        if self.snack:
+            print(f"{self.name} already had snacks today.")
+        else:
+            print(f"{self.name} is now having snacks.")
+            self.snack=True
 p = Person('John',36)
 print(p.greet())
 
