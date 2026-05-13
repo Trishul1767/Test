@@ -14,11 +14,12 @@ class Person:
             self.awake=True
             print(f"{self.name} just woke up.")
             def sleep(self):
+    def sleep(self):
         if self.awake:
             self.awake=False
-            print("Dog is now asleep.")
+            print(f"{self.name} is now asleep.")
         else:
-            print("Dog is already asleep.")
+            print(f"{self.name} is already asleep.")
     def snacks(self):
         if self.snack:
             print(f"{self.name} already had snacks today.")
