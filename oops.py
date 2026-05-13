@@ -4,6 +4,7 @@ class Person:
         self.age=age
         self.awake:bool=False
         self.snack:bool=False
+        self.awake:bool=False
     def greet(self):
         return f'Hello, my name is {self.name}'
     def wake_up(self):
@@ -12,6 +13,12 @@ class Person:
         else:
             self.awake=True
             print(f"{self.name} just woke up.")
+            def sleep(self):
+        if self.awake:
+            self.awake=False
+            print("Dog is now asleep.")
+        else:
+            print("Dog is already asleep.")
     def snacks(self):
         if self.snack:
             print(f"{self.name} already had snacks today.")
