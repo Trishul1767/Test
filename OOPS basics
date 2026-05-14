@@ -1,0 +1,5 @@
+class car:
+  pass
+audi=car()
+bmw=car()
+print(type(bmw))
