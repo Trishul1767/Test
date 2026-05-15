@@ -3,3 +3,4 @@ class car:
 audi=car()
 bmw=car()
 print(type(bmw))
+print(type(audi))
