@@ -13,7 +13,6 @@ class Person:
         else:
             self.awake=True
             print(f"{self.name} just woke up.")
-            def sleep(self):
     def sleep(self):
         if self.awake:
             self.awake=False
@@ -27,10 +26,10 @@ class Person:
             print(f"{self.name} is now having snacks.")
             self.snack=True
     def repr(self):
-        print(f"I am {self.name} and I am {self.age})    
+        print(f"I am {self.name} and I am {self.age}.")    
 p = Person('John',36)
 print(p.greet())
-print((p.repr())
+print(p.repr())
 print(p.snacks())
 
 class Dog:
