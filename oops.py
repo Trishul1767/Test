@@ -25,11 +25,11 @@ class Person:
         else:
             print(f"{self.name} is now having snacks.")
             self.snack=True
-    def repr(self):
-        print(f"I am {self.name} and I am {self.age}.")    
+    def __repr__(self):
+        return f'I am {self.name} and I am {self.age}.'
 p = Person('John',36)
 print(p.greet())
-print(p.repr())
+print(repr(p))
 print(p.snacks())
 
 class Dog:
