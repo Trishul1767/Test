@@ -24,3 +24,13 @@ Trishul.withdraw(400)
 print(Trishul.get_balance())
 Trishul.credit(300)
 Trishul.withdraw(800)
+
+print("Start small. Ship something.")
+class Person:
+    def __init__(self,name:str,age:int):
+        self.name=name
+        self.age=age
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+p1=Person("John",36)
+p1.greet()
