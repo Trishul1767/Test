@@ -2,7 +2,6 @@ class car:
   pass
 audi=car()
 bmw=car()
-print(type(bmw))
 class BankAccount:
     def __init__(self,name,balance=0):
         self.name=name
