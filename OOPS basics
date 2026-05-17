@@ -1,7 +1,3 @@
-class car:
-  pass
-audi=car()
-bmw=car()
 class BankAccount:
     def __init__(self,name,balance=0):
         self.name=name
