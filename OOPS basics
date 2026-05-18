@@ -19,11 +19,8 @@ class BankAccount:
         
 Trishul=BankAccount('hdfc',1400)
 Trishul.credit(100)
-print(Trishul.get_balance())
 Trishul.withdraw(400)
 print(Trishul.get_balance())
-Trishul.credit(300)
-Trishul.withdraw(800)
 
 class Car:
   def __init__(self, brand, model, year):
@@ -45,3 +42,17 @@ class Person:
         print(f"Hello, my name is {self.name}")
 p1=Person("John",36)
 p1.greet()
+
+class Person:
+  def __init__(self, name):
+    self.name = name
+
+  def greet(self):
+    return "Hello, " + self.name
+
+  def welcome(self):
+    message = self.greet()
+    print(message + "! Welcome to our website.")
+
+p1 = Person("Tobias")
+p1.welcome()
