@@ -25,19 +25,17 @@ print(Trishul.get_balance())
 Trishul.credit(300)
 Trishul.withdraw(800)
 
-#with the self parameter
-class Person:
-  def __init__(self, name):
-    self.name = name
+class Car:
+  def __init__(self, brand, model, year):
+    self.brand = brand
+    self.model = model
+    self.year = year
 
-  def printname(self):
-    print(self.name)
+  def display_info(self):
+    print(f"{self.year} {self.brand} {self.model}")
 
-p1 = Person("Tobias")
-p2 = Person("Linus")
-
-p1.printname()
-p2.printname()
+car1 = Car("Toyota", "Corolla", 2020)
+car1.display_info()
 
 class Person:
     def __init__(self,name:str,age:int):
