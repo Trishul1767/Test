@@ -25,7 +25,6 @@ print(Trishul.get_balance())
 Trishul.credit(300)
 Trishul.withdraw(800)
 
-print("Start small. Ship something.")
 class Person:
     def __init__(self,name:str,age:int):
         self.name=name
