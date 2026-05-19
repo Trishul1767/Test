@@ -1,31 +1,32 @@
 class Car:
-    def __init__(self,model,power):
+    def __init__(self,model:str,power:int):
         self.model=model
         self.power=power
         self.ignition=False
-
-    def start(self):
+    def turn_on(self):
         if self.ignition:
             print(f"{self.model} is already turned on.")
         else:
             print(f"{self.model} is now turned on.")
             self.ignition=True
-
+            
     def turn_off(self):
         if self.ignition:
             print(f"{self.model} is now turned off.")
             self.ignition=False
         else:
             print(f"{self.model} is already turned off.")
-
+            
     def drive(self):
-        if ignition:
+        if self.ignition:
             print(f"{self.model} is now being driven.")
         else:
-            print("Kindly turn on the ignition.")
-
-tesla=Car('plaid',400)
-tesla.turn_on()
-tesla.drive()
-tesla.turn_off()
-tesla.drive()
+            print(f"Kindly turn on the ignition of the {self.model}.")
+            
+class Truck(Car):
+    def __init__(self,model,power,load_capacity):
+        super().__init__(model,power)
+        self.load_capacity=load_capacity
+   
+eicher=Truck('Pro 2049',75,5)
+eicher.drive()
