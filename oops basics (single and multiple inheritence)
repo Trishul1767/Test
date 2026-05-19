@@ -4,10 +4,17 @@ class Car:
         self.power=power
         self.ignition=False
     def start(self):
-        if ignition:
+        if self.ignition:
             print(f"{self.model} is already turned on.")
         else:
             print(f"{self.model} is now turned on.")
+            self.ignition=True
+    def turn_off(self):
+        if self.ignition:
+            print(f"{self.model} is now turned off.")
+            self.ignition=False
+        else:
+            print(f"{self.model} is already turned off.")
     def drive(self):
         if ignition:
             print(f"{self.model} is now being driven.")
