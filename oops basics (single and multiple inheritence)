@@ -1,4 +1,4 @@
-class Car:
+class Vehicle:
     def __init__(self,model:str,power:int):
         self.model=model
         self.power=power
@@ -22,11 +22,25 @@ class Car:
             print(f"{self.model} is now being driven.")
         else:
             print(f"Kindly turn on the ignition of the {self.model}.")
-            
-class Truck(Car):
+class Bike(Vehicle):
+    def __init__(self,model,power,colour):
+        super().__init__(model,power)
+        self.colour=colour
+class Car(Bike):
+    def __init__(self,model,power,colour,transmission):
+        Bike.__init__(self,model,power,colour)
+        self.transmission=transmission
+Tesla=Car('plaid',1020,'black','auto')
+Tesla.drive()
+        
+class Truck(Vehicle):
     def __init__(self,model,power,load_capacity):
         super().__init__(model,power)
         self.load_capacity=load_capacity
    
 eicher=Truck('Pro 2049',75,5)
 eicher.drive()
+Kawasaki=Bike('Ninja',90,'Green')
+Kawasaki.turn_on()
+Kawasaki.drive()
+Kawasaki.turn_off()
