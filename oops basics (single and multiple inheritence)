@@ -3,6 +3,7 @@ class Vehicle:
         self.model=model
         self.power=power
         self.ignition=False
+
     def turn_on(self):
         if self.ignition:
             print(f"{self.model} is already turned on.")
@@ -22,10 +23,14 @@ class Vehicle:
             print(f"{self.model} is now being driven.")
         else:
             print(f"Kindly turn on the ignition of the {self.model}.")
+
+
 class Bike(Vehicle):
     def __init__(self,model,power,colour):
         super().__init__(model,power)
         self.colour=colour
+
+
 class Car(Bike):
     def __init__(self,model,power,colour,transmission):
         Bike.__init__(self,model,power,colour)
