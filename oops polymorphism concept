@@ -1,0 +1,22 @@
+class Shape:
+    def Area(self):
+        print("hi!")
+
+class Rectangle(Shape):
+    def __init__(self,width,height):
+        self.height=height
+        self.width=width
+    def Area(self):
+        return 3.14 * self.width * self.height
+class Square(Shape):
+    def __init__(self,height):
+        self.height=height
+    def Area(self):
+        return self.height*self.height
+def area(shape):
+    print(shape.Area())
+x=Square(4)
+y=Shape()
+area(x)
+area(y)
+    
