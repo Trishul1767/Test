@@ -1,6 +1,6 @@
 class Shape:
     def Area(self):
-        print("hi!")
+        return "hi!"
 
 class Rectangle(Shape):
     def __init__(self,width,height):
@@ -14,9 +14,9 @@ class Square(Shape):
     def Area(self):
         return self.height*self.height
 def area(shape):
-    print(shape.Area())
+    return shape.Area()
 x=Square(4)
 y=Shape()
-area(x)
-area(y)
+print(area(x))
+print(area(y))
     
