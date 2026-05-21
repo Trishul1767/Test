@@ -49,12 +49,8 @@ z=Car('m340i',250)
 print(repr(x))
 z.turn_on()
 z.run_lap(10)
-z.turn_off()
-z.turn_on()
-z.run_lap(1)
+z.check_fuel()
 z.fuel_up(50)
-z.run_lap(1)
-z.turn_off()
 z.check_fuel()
 
 
