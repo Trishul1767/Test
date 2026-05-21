@@ -1,0 +1,58 @@
+class BankAccount:
+    def __init__(self,name,balance=0):
+        self.name=name
+        self.balance=balance
+        
+    def withdraw(self,money:int):
+        if self.balance>=money:
+            self.balance-=money
+            print(f"{money} has been withdrawn sucessfully. Remaining balance: {self.balance}")
+        else:
+            print("Insufficient amount.")
+            
+    def get_balance(self):
+        return f'Balance:{self.balance}.'
+        
+    def credit(self,money:int):
+        self.balance+=money
+        print(f"{money} has sucessfully credited. Remaining balance: {self.balance}.")
+        
+Trishul=BankAccount('hdfc',1400)
+Trishul.credit(100)
+Trishul.withdraw(400)
+print(Trishul.get_balance())
+
+class Car:
+  def __init__(self, brand, model, year):
+    self.brand = brand
+    self.model = model
+    self.year = year
+
+  def display_info(self):
+    print(f"{self.year} {self.brand} {self.model}")
+
+car1 = Car("Toyota", "Corolla", 2020)
+car1.display_info()
+
+class Person:
+    def __init__(self,name:str,age:int):
+        self.name=name
+        self.age=age
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+p1=Person("John",36)
+p1.greet()
+
+class Person:
+  def __init__(self, name):
+    self.name = name
+
+  def greet(self):
+    return "Hello, " + self.name
+
+  def welcome(self):
+    message = self.greet()
+    print(message + "! Welcome to our website.")
+
+p1 = Person("Tobias")
+p1.welcome()
