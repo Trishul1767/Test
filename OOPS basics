@@ -2,6 +2,7 @@ class BankAccount:
     def __init__(self,name,balance=0):
         self.name=name
         self.balance=balance
+        self.__account_is=True
         
     def withdraw(self,money:int):
         if self.balance>=money:
@@ -16,14 +17,8 @@ class BankAccount:
     def credit(self,money:int):
         self.balance+=money
         print(f"{money} has sucessfully credited. Remaining balance: {self.balance}.")
-        
-Trishul=BankAccount('hdfc',1400)
-print(Trishul.get_balance())
-Trishul.credit(100)
-Trishul.withdraw(400)
-Trishul.withdraw(400)
-print(Trishul.get_balance())
-
+hdfc=BankAccount('Trishul',1200)
+print(dir(hdfc))
 
 class Car:
   def __init__(self, brand, model, year):
