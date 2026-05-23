@@ -26,7 +26,7 @@ class Bike(Vehicle):
             print("Your Bike is a Beast.")
         else:
             print("Add a Turbo and a SC projects exhaust.")
-Kawasaki=Bike('H2r',2026,'white',100)
-def print_car(car):
-    print(car.colour)
-print_car(Kawasaki)
+kawasaki=Bike('H2r',2026,'white',100)
+def print_detail(obj):
+    print(obj.colour)
+print_detail(kawasaki)
