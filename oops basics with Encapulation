@@ -1,4 +1,4 @@
-class vehicle:
+class Vehicle:
     def __init__(self,model,year,colour):
         self.__model=model
         self.year=year
@@ -8,7 +8,7 @@ class vehicle:
             print("Please make sure it has PUC.")
         else:
             print("Good to go!.")
-class Car(vehicle):
+class Car(Vehicle):
     def __init__(self,model,year,colour,power):
         super().__init__(model,year,colour)
         self._power=power
@@ -17,9 +17,10 @@ class Car(vehicle):
             print("Your Car is a Beast.")
         else:
             print("Add a Turbo and a BMC air intake.")
-class Bike(Car):
+class Bike(Vehicle):
     def __init__(self,model,year,colour,power):
-        super().__init__(model,year,colour,power)
+        super().__init__(model,year,colour)
+        self._power=power
     def is_fast(self):
         if self._power>=150:
             print("Your Bike is a Beast.")
