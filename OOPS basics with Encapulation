@@ -1,0 +1,31 @@
+class vehicle:
+    def __init__(self,model,year,colour):
+        self.__model=model
+        self.year=year
+        self.colour=colour
+    def is_older(self):
+        if 2026-self.year>=8:
+            print("Please make sure it has PUC.")
+        else:
+            print("Good to go!.")
+class Car(vehicle):
+    def __init__(self,model,year,colour,power):
+        super().__init__(model,year,colour)
+        self._power=power
+    def is_fast(self):
+        if self._power>=150:
+            print("Your Car is a Beast.")
+        else:
+            print("Add a Turbo and a BMC air intake.")
+class Bike(Car):
+    def __init__(self,model,year,colour,power):
+        super().__init__(model,year,colour,power)
+    def is_fast(self):
+        if self._power>=150:
+            print("Your Bike is a Beast.")
+        else:
+            print("Add a Turbo and a SC projects exhaust.")
+Kawasaki=Bike('H2r',2026,'white',100)
+def print_car(car):
+    print(car.colour)
+print_car(Kawasaki)
