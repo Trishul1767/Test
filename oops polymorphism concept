@@ -22,7 +22,7 @@ def area(shape):
 
 # x and y are the objects
 x=Square(4)
-y=Shape()
+y=Rectangle(2,2)
 
 print(area(x))
 print(area(y))
