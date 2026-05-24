@@ -9,18 +9,20 @@ class Rectangle(Shape):
 
     def Area(self):
         return self.width * self.height
+
 class Circle(Shape):
     def __init__(self,radius):
         self.radius=radius
 
     def Area(self):
-        return 3.14*self.radius
+        return 3.14 * self.radius * self.radius
+
 class Square(Shape):
     def __init__(self,height):
         self.height=height
 
     def Area(self):
-        return self.height*self.height
+        return self.height * self.height
 
 def area(shape):
     return shape.Area()
@@ -28,8 +30,9 @@ def area(shape):
 # x and y are the objects
 x=Square(4)
 y=Rectangle(2,2)
+z=Circle(2)
 
 print(area(x))
 print(area(y))
-
+print(area(z))
     
