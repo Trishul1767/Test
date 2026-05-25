@@ -2,6 +2,7 @@ class BankAccount:
     def __init__(self,name,balance=0):
         self.name=name
         self.balance=balance
+        self.__account_is=True
         
     def withdraw(self,money:int):
         if self.balance>=money:
@@ -16,11 +17,8 @@ class BankAccount:
     def credit(self,money:int):
         self.balance+=money
         print(f"{money} has sucessfully credited. Remaining balance: {self.balance}.")
-        
-Trishul=BankAccount('hdfc',1400)
-Trishul.credit(100)
-Trishul.withdraw(400)
-print(Trishul.get_balance())
+hdfc=BankAccount('Trishul',1200)
+print(dir(hdfc))
 
 class Car:
   def __init__(self, brand, model, year):
@@ -34,14 +32,6 @@ class Car:
 car1 = Car("Toyota", "Corolla", 2020)
 car1.display_info()
 
-class Person:
-    def __init__(self,name:str,age:int):
-        self.name=name
-        self.age=age
-    def greet(self):
-        print(f"Hello, my name is {self.name}")
-p1=Person("John",36)
-p1.greet()
 
 class Person:
   def __init__(self, name):
