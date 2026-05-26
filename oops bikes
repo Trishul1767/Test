@@ -1,0 +1,39 @@
+class Cycle:
+    def __init__(self, brand, colour):
+        self.brand = brand
+        self.colour=colour
+
+    def __str__(self):
+        return f"Cycle(brand='{self.brand}', colour='{self.colour}')"
+    def Tour_de_France(self):
+        print(f"{self.brand} is participating in Tour de France.")
+    def start(self):
+        print(f"{self.brand} has started moving.")
+    def stop(self):
+        print(f"{self.brand} has stopped moving.")
+
+a=Cycle('Bianchi', 'Green')
+b=Cycle('Trek', 'Red')
+c=Cycle('Specialized', 'Blue')
+d=Cycle('Cannondale', 'Yellow')
+e=Cycle('Giant', 'Black')
+f=Cycle('Scott', 'White')
+g=Cycle('Pinarello', 'Pink')
+h=Cycle('Cervelo', 'Purple')
+i=Cycle('Colnago', 'Orange')
+j=Cycle('BMC', 'Grey')  
+k=Cycle('Orbea', 'Brown')
+l=Cycle('Santa Cruz', 'Cyan')
+m=Cycle('Yeti', 'Magenta')
+n=Cycle('Salsa', 'Lime')
+o=Cycle('Surly', 'Teal')
+p=Cycle('Kona', 'Maroon')
+q=Cycle('GT', 'Navy')
+r=Cycle('Fuji', 'Olive')
+s=Cycle('Canyon', 'Silver')
+t=Cycle('Merida', 'Gold')
+u=Cycle('Bergamont', 'Bronze')
+v=Cycle('Cube', 'Coral')
+w=Cycle('Factory', 'Turquoise')
+x=Cycle('Lapierre', 'Violet')
+z=Cycle('Pinarello', 'Pink')
