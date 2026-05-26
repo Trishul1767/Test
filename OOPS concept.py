@@ -53,14 +53,7 @@ class Car:
 z=Car('m340i',250)
 z.turn_on()
 z.run_lap(10)
-<<<<<<< HEAD
-z.check_fuel()
-=======
-z.laps_remaining()
-z.run_lap(1)
->>>>>>> f5f1a3df9a38511026584028a696313b11c09137
-z.fuel_up(50)
-z.check_fuel()
+
 
 
 
