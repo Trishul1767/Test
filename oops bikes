@@ -5,10 +5,13 @@ class Cycle:
 
     def __str__(self):
         return f"Cycle(brand='{self.brand}', colour='{self.colour}')"
+
     def Tour_de_France(self):
         print(f"{self.brand} is participating in Tour de France.")
+
     def start(self):
         print(f"{self.brand} has started moving.")
+
     def stop(self):
         print(f"{self.brand} has stopped moving.")
 
