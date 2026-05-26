@@ -54,6 +54,13 @@ z=Car('m340i',250)
 z.turn_on()
 z.run_lap(10)
 
+y=Car('Yangwang U8', 1000)
+print(y)
+z.run_lap(5)
+z.laps_remaining()
+z.check_fuel()
+z.run_lap(2)
+
 
 
 
