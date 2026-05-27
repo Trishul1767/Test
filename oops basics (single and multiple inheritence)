@@ -40,6 +40,9 @@ class Bull_dozer(Truck):
         super().__init__(model,power,load_capacity)
         self.transmission=transmission
 
+car=Vehicle('Audi',150)
+car.turn_on()
+
 
 eicher=Truck('Pro 2049',75,5)
 eicher.drive()
