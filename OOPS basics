@@ -19,7 +19,8 @@ class BankAccount:
         print(f"{money} has sucessfully credited. Remaining balance: {self.balance}.")
 hdfc=BankAccount('Trishul',1200)
 print(dir(hdfc))
-hdfc.get_balance()
+print(hdfc.get_balance())
+
 class Car:
   def __init__(self, brand, model, year):
     self.brand = brand
