@@ -1,5 +1,5 @@
-a=2
-b=3
+a=1
+b=2
 temp=a
 a=b
 b=temp
