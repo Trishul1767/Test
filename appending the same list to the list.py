@@ -1,3 +1,3 @@
 A=[1,2,3]
-# or
+# to add the same list
 A.extend(A)
