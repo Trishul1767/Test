@@ -40,7 +40,7 @@ def removed_tasks(bin_tasks):
             print(i+1,j)
 tasks=[]
 bin_tasks=[]
-print("  ********** Welcome to TO-DO list **********")
+print("  *********** Welcome to TO-DO list **********")
 print('type 1 to view tasks')
 print("type 2 to add tasks")
 print('type 3 to remove tasks')
