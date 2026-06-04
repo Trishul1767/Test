@@ -1,7 +1,7 @@
 #removing duplicates from a string
 n=input("Enter a string: ")
 result=""
-for i in n: 
-    if i not in result: 
-        result=result+i 
+for _ in n: 
+    if _ not in result: 
+        result=result+_
 print("String after removing duplicates:", result)
