@@ -27,7 +27,7 @@ class Square(Shape):
 def area(shape):
     return shape.Area()
 
-# x and y are the objects
+# x,y and z are the objects
 x=Square(4)
 y=Rectangle(2,2)
 z=Circle(2)
