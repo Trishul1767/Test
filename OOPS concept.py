@@ -55,6 +55,7 @@ class Car:
         
     def setter(self,name):
         self.__model=name
+        
     def getter(self):
         return self.__model
 
