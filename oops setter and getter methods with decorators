@@ -1,0 +1,37 @@
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        # The hidden variable
+        self._score = score 
+
+    # 1. THE GETTER
+    # We use @property just above a method. 
+    # Notice we name the method 'score' (without the underscore)
+    @property
+    def score(self):
+        return self._score
+
+    # 2. THE SETTER
+    # We use @[name_of_getter].setter
+    @score.setter
+    def score(self, new_score):
+        if new_score >= 0 and new_score <= 100:
+            self._score = new_score
+            print(f"Score successfully updated to {new_score}")
+        else:
+            print("Error: Score must be between 0 and 100!")
+
+
+# Let's test it out
+student1 = Student("Trishul", 85)
+
+# --- THE MAGIC HAPPENS HERE ---
+
+# To get the score, we just ask for it like a normal variable!
+# No parentheses needed. Under the hood, Python calls the @property getter.
+print(student1.score)  # Output: 85
+
+# To set the score, we use the equals sign like normal!
+# Under the hood, Python routes this through the @score.setter rules.
+student1.score = 95    # Output: Score successfully updated to 95
+student1.score = 150   # Output: Error: Score must be between 0 and 100!
