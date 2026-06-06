@@ -3,5 +3,4 @@ b=int(input())
 def sum(a,b):
     print(a*b)
 sum(a,b)
-print("hi")
 assert(sum(1,1)==2),"AssertionError: The sum of 1 and 1 should be 2"
