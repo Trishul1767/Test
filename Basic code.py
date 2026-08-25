@@ -1,6 +1,5 @@
 # fun app code
 print("Hello, World!")
-print("This is a fun app!")
 print("Enjoy coding!")
 # a gaming app code
 print("Welcome to the gaming app!")
