@@ -3,3 +3,4 @@ s=set()
 for i in l1:
     s.add(i)
 print(s)
+print(l1)
