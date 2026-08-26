@@ -4,3 +4,5 @@ for i in l1:
     s.add(i)
 print(l1)
 print(s)
+print(s*2)
+print(l1*2)
