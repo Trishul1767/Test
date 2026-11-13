@@ -47,6 +47,5 @@ car.turn_on()
 eicher=Truck('Pro 2049',75,5)
 eicher.drive()
 Kawasaki=Bike('Ninja',90,'Green')
-Kawasaki.turn_on()
-Kawasaki.drive()
+
 
