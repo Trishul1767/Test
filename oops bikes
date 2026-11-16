@@ -35,4 +35,4 @@ r=Cycle('Canyon', 'Silver')
 s=Cycle('Cube', 'Coral')
 t=Cycle('Factory', 'Turquoise')
 u=Cycle('Pinarello', 'Pink')
-v=
+v=Cycle('FireFox'
