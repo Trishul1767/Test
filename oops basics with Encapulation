@@ -22,7 +22,7 @@ class Bike(Vehicle):
         super().__init__(model,year,colour)
         self._power=power
     def is_fast(self):
-        if self._power>=150:
+        if self._power>=120:
             print("Your Bike is a Beast.")
         else:
             print("Add a Turbo and a SC projects exhaust.")
