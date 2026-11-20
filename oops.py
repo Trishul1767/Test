@@ -31,7 +31,6 @@ p = Person('John',36)
 print(p.greet())
 print(repr(p))
 print(p.sleep())
-print(p.snacks())
 
 class Dog:
     def __init__(self,name,age):
